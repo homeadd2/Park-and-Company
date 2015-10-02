@@ -1,10 +1,13 @@
 package pageobjectmodel;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
+import componenthelper.GenericHelper;
 import baseclass.PageBase;
 
 public class HomePage extends PageBase {
@@ -15,6 +18,8 @@ public class HomePage extends PageBase {
 		super(driver);
 		this._driver = driver;
 	}
+	
+	private final String errMsg = "Error Page Not Loaded : ";
 	
 	@FindBy(xpath="//div[@id='header4']/descendant::a[text()='Programs ']",how=How.XPATH)
 	private WebElement Programs;
@@ -40,11 +45,19 @@ public class HomePage extends PageBase {
 	@FindBy(xpath="//div[@id='header4']/descendant::a[text()='Onboarding ']",how=How.XPATH)
 	private WebElement Onboarding;
 	
+	@FindBy(xpath="//div[@id='header4']/descendant::a[text()='Manage Incentive Programs']",how=How.XPATH)
+	private WebElement ManageIncentivePrograms;
 	
-	public void clickItem(){
+	
+	
+	public ManageIncentivePrograms OpenManageIncentivePrograms(){
 		Programs.click();
-		Partner.click();
-		File.click();
+		GenericHelper.waitForElement(ManageIncentivePrograms);
+		ManageIncentivePrograms.click();
+		GenericHelper.waitForElement(By.id("titleDiv"));
+		Assert.assertTrue(GenericHelper.isElementPresent(By.id("titleDiv")), errMsg + "Manage Incentive Programs Page");
+		
+		return new ManageIncentivePrograms(_driver);
 	}
 	
 	

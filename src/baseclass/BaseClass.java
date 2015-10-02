@@ -1,28 +1,19 @@
 package baseclass;
 
-import java.util.NoSuchElementException;
-
-import objectrepo.ObjectRepository;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import componenthelper.GenericHelper;
+
 public class BaseClass extends InitializeWebDriver {
 	
-	protected boolean isElementPresent(By locator){
-		try {
-			if(ObjectRepository.driver.findElements(locator).size() == 1)
-				return true;
-			return false;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-	
-	protected WebElement getElement(By locator){
-		if(isElementPresent(locator))
-			return ObjectRepository.driver.findElement(locator);
-		throw new NoSuchElementException("Element Not Found : " + locator.toString());
+	protected void Logout() {
+		WebElement logout = GenericHelper.getElement(By.xpath("//span[@class='headerMenuPipe']/preceding-sibling::span[contains(text(),'Welcome')]"));
+		logout = GenericHelper.waitForElementClickAble(logout);
+		logout.click();
+		logout = GenericHelper.waitForElement(By.xpath("//a[contains(text(),'Log Off')]"));
+		logout.click();
+		GenericHelper.waitForElement(By.xpath("//div[@class='loginWrapper']"));
 	}
 
 }
