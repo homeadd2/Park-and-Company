@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Webdriver]">
+  <test name="Bugzila Suite(failed)">
+    <classes>
+      <class name="testcases.module.login.LoginTest">
+        <methods>
+          <include name="testcaseone"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.module.login.LoginTest -->
+    </classes>
+  </test> <!-- Bugzila Suite(failed) -->
+</suite> <!-- Failed suite [Webdriver] -->

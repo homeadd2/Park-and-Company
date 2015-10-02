@@ -4,6 +4,7 @@
 package configreader;
 
 import interfaces.IReadConfiguration;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +13,9 @@ import java.util.Properties;
 
 
 
+
 import settings.BrowserType;
+import settings.RelativePathUtils;
 
 /**
  * @author - rahul.rathore
@@ -27,17 +30,12 @@ public class ReadConfigProperty implements IReadConfiguration {
 	protected InputStream input = null;
 	protected Properties prop = null;
 	
-	private String getBaseDir(String dirName){
-		String path = this.getClass().getClassLoader().getResource("./").getPath();
-		path = path.replaceAll("bin", "src") + dirName + System.getProperty("file.separator");
-		System.out.println("ReadConfigProperty - Path : " + path);
-		return path;
-	}
+	
 	
 	public ReadConfigProperty() {
 		try {
 			
-			input = new FileInputStream(getBaseDir("resource")  + "config.properties");
+			input = new FileInputStream(RelativePathUtils.getBaseDir("resources")  + "config.properties");
 			prop = new Properties();
 			prop.load(input);
 		} catch (IOException e) {
@@ -47,7 +45,7 @@ public class ReadConfigProperty implements IReadConfiguration {
 	
 	public ReadConfigProperty(String fileName) {
 		try {
-			input = new FileInputStream(getBaseDir("resource") + fileName);
+			input = new FileInputStream(RelativePathUtils.getBaseDir("resources") + fileName);
 			prop = new Properties();
 			prop.load(input);
 		} catch (IOException e) {
