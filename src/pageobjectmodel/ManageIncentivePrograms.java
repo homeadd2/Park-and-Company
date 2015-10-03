@@ -24,6 +24,7 @@ public class ManageIncentivePrograms extends PageBase {
 	
 	public void clickColumnoptions() throws InterruptedException {
 		Columnoptions.click();
+		GenericHelper.waitForElement(By.xpath("//button[text()='Cancel']"));
 		Thread.sleep(2000);
 		ButtonHelper.click(By.xpath("//button[text()='Cancel']"));
 		GenericHelper.waitForElement(Columnoptions);

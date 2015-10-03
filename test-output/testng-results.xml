@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Webdriver" duration-ms="25989" started-at="2015-10-02T07:29:31Z" finished-at="2015-10-02T07:29:57Z">
+  <suite name="Webdriver" duration-ms="115997" started-at="2015-10-03T03:51:35Z" finished-at="2015-10-03T03:53:31Z">
     <groups>
     </groups>
-    <test name="Bugzila Suite" duration-ms="25989" started-at="2015-10-02T07:29:31Z" finished-at="2015-10-02T07:29:57Z">
+    <test name="Bugzila Suite" duration-ms="115997" started-at="2015-10-03T03:51:35Z" finished-at="2015-10-03T03:53:31Z">
       <class name="testcases.module.login.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="setUp" is-config="true" duration-ms="9236" started-at="2015-10-02T15:29:31Z" finished-at="2015-10-02T15:29:40Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="setUp" is-config="true" duration-ms="74640" started-at="2015-10-03T11:51:35Z" finished-at="2015-10-03T11:52:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testcaseone()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="testcaseone" duration-ms="15266" started-at="2015-10-02T15:29:40Z" finished-at="2015-10-02T15:29:55Z">
+        <test-method status="PASS" signature="testcaseone()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="testcaseone" duration-ms="39705" started-at="2015-10-03T11:52:49Z" finished-at="2015-10-03T11:53:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcaseone -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="tearDown" is-config="true" duration-ms="1464" started-at="2015-10-02T15:29:55Z" finished-at="2015-10-02T15:29:57Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.module.login.LoginTest@6c3dc52b]" name="tearDown" is-config="true" duration-ms="1616" started-at="2015-10-03T11:53:29Z" finished-at="2015-10-03T11:53:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
