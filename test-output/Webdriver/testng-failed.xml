@@ -3,18 +3,18 @@
 <suite name="Failed suite [Webdriver]">
   <test name="Bugzila Suite(failed)">
     <classes>
+      <class name="testcases.module.incentiveprogm.TestActivityIncentiveTemplate">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestActivityIncentiveTemp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.module.incentiveprogm.TestActivityIncentiveTemplate -->
       <class name="testcases.module.incentiveprogm.TestIncentiveProgram">
         <methods>
           <include name="TestColumnOptions"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- testcases.module.incentiveprogm.TestIncentiveProgram -->
-      <class name="testcases.module.incentiveprogm.TestActivityIncentiveTemplate">
-        <methods>
-          <include name="TestActivityIncentiveTemp"/>
-        </methods>
-      </class> <!-- testcases.module.incentiveprogm.TestActivityIncentiveTemplate -->
     </classes>
   </test> <!-- Bugzila Suite(failed) -->
 </suite> <!-- Failed suite [Webdriver] -->

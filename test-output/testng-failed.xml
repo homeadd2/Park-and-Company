@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Webdriver]">
+  <test name="Bugzila Suite(failed)">
     <classes>
+      <class name="testcases.module.incentiveprogm.TestActivityIncentiveTemplate">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestActivityIncentiveTemp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.module.incentiveprogm.TestActivityIncentiveTemplate -->
       <class name="testcases.module.incentiveprogm.TestIncentiveProgram">
         <methods>
           <include name="TestColumnOptions"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- testcases.module.incentiveprogm.TestIncentiveProgram -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Bugzila Suite(failed) -->
+</suite> <!-- Failed suite [Webdriver] -->
