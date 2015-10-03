@@ -2,30 +2,40 @@
 <testng-results skipped="2" failed="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Webdriver" duration-ms="56646" started-at="2015-10-03T13:08:17Z" finished-at="2015-10-03T13:09:13Z">
+  <suite name="Webdriver" duration-ms="113894" started-at="2015-10-03T14:32:49Z" finished-at="2015-10-03T14:34:42Z">
     <groups>
     </groups>
-    <test name="Bugzila Suite" duration-ms="56646" started-at="2015-10-03T13:08:17Z" finished-at="2015-10-03T13:09:13Z">
+    <test name="Bugzila Suite" duration-ms="113894" started-at="2015-10-03T14:32:49Z" finished-at="2015-10-03T14:34:42Z">
       <class name="testcases.module.incentiveprogm.TestActivityIncentiveTemplate">
-        <test-method status="FAIL" signature="setUp()[pri:0, instance:testcases.module.incentiveprogm.TestActivityIncentiveTemplate@2686a13f]" name="setUp" is-config="true" duration-ms="0" started-at="2015-10-03T21:08:17Z" finished-at="2015-10-03T21:08:17Z">
+        <test-method status="SKIP" signature="TestActivityIncentiveTemp()[pri:0, instance:testcases.module.incentiveprogm.TestActivityIncentiveTemplate@7ab32609]" name="TestActivityIncentiveTemp" duration-ms="1" started-at="2015-10-03T22:34:41Z" finished-at="2015-10-03T22:34:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestActivityIncentiveTemp -->
+      </class> <!-- testcases.module.incentiveprogm.TestActivityIncentiveTemplate -->
+      <class name="testcases.module.incentiveprogm.TestIncentiveProgram">
+        <test-method status="FAIL" signature="setUp()[pri:0, instance:testcases.module.incentiveprogm.TestIncentiveProgram@4fc55da3]" name="setUp" is-config="true" duration-ms="0" started-at="2015-10-03T22:32:49Z" finished-at="2015-10-03T22:32:49Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Timed out waiting for page load.
-Command duration or timeout: 50.04 seconds
+              <![CDATA[timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=45.0.2454.101)
+  (Driver info: chromedriver=2.19.346078 (6f1f0cde889532d48ce8242342d0b84f94b114a1),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 108.22 seconds
 Build info: version: '2.47.1', revision: '411b314', time: '2015-07-30 03:03:16'
 System info: host: 'LT-RSR28', ip: '10.61.16.18', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.7.0_75'
-Session ID: e5d041de-e595-479e-9ee7-c3ee5e2cbc36
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=41.0.1}]]]>
+Session ID: bfe9ffd9a24c067ef3644aa3f4598f03
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8_1, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\rsr\AppData\Local\Temp\scoped_dir1196_7264}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=45.0.2454.101, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Timed out waiting for page load.
-Command duration or timeout: 50.04 seconds
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=45.0.2454.101)
+  (Driver info: chromedriver=2.19.346078 (6f1f0cde889532d48ce8242342d0b84f94b114a1),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 108.22 seconds
 Build info: version: '2.47.1', revision: '411b314', time: '2015-07-30 03:03:16'
 System info: host: 'LT-RSR28', ip: '10.61.16.18', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.7.0_75'
-Session ID: e5d041de-e595-479e-9ee7-c3ee5e2cbc36
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=41.0.1}]
+Session ID: bfe9ffd9a24c067ef3644aa3f4598f03
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=WIN8_1, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\rsr\AppData\Local\Temp\scoped_dir1196_7264}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=45.0.2454.101, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -59,34 +69,20 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
-Build info: version: '2.47.1', revision: '411b314', time: '2015-07-30 03:03:16'
-System info: host: 'LT-RSR28', ip: '10.61.16.18', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.Utils.initWebLoadingListener/<(file:///C:/Users/rsr/AppData/Local/Temp/anonymous1111808509156303006webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:8993)
-	at <anonymous class>.WebLoadingListener/e(file:///C:/Users/rsr/AppData/Local/Temp/anonymous1111808509156303006webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5076)
-	at <anonymous class>.WebLoadingListener/<(file:///C:/Users/rsr/AppData/Local/Temp/anonymous1111808509156303006webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5084)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/rsr/AppData/Local/Temp/anonymous1111808509156303006webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="TestActivityIncentiveTemp()[pri:0, instance:testcases.module.incentiveprogm.TestActivityIncentiveTemplate@2686a13f]" name="TestActivityIncentiveTemp" duration-ms="1" started-at="2015-10-03T21:09:13Z" finished-at="2015-10-03T21:09:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestActivityIncentiveTemp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.module.incentiveprogm.TestActivityIncentiveTemplate@2686a13f]" name="tearDown" is-config="true" duration-ms="613" started-at="2015-10-03T21:09:13Z" finished-at="2015-10-03T21:09:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testcases.module.incentiveprogm.TestActivityIncentiveTemplate -->
-      <class name="testcases.module.incentiveprogm.TestIncentiveProgram">
-        <test-method status="SKIP" signature="TestColumnOptions()[pri:0, instance:testcases.module.incentiveprogm.TestIncentiveProgram@78657ce]" name="TestColumnOptions" duration-ms="5" started-at="2015-10-03T21:09:13Z" finished-at="2015-10-03T21:09:13Z">
+        <test-method status="SKIP" signature="TestColumnOptions()[pri:0, instance:testcases.module.incentiveprogm.TestIncentiveProgram@4fc55da3]" name="TestColumnOptions" duration-ms="1" started-at="2015-10-03T22:34:41Z" finished-at="2015-10-03T22:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestColumnOptions -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.module.incentiveprogm.TestIncentiveProgram@4fc55da3]" name="tearDown" is-config="true" duration-ms="1404" started-at="2015-10-03T22:34:41Z" finished-at="2015-10-03T22:34:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- testcases.module.incentiveprogm.TestIncentiveProgram -->
     </test> <!-- Bugzila Suite -->
   </suite> <!-- Webdriver -->
