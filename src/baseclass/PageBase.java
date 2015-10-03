@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageBase extends BaseClass {
 	
-	protected WebDriver driver;
+	private WebDriver driver;
 	
 	public PageBase(WebDriver _driver){
 		this.driver = _driver;

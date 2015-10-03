@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
+import settings.ErrorMessage;
 import componenthelper.GenericHelper;
-
 import baseclass.PageBase;
 
 public class LoginPage extends PageBase {
@@ -19,7 +19,6 @@ public class LoginPage extends PageBase {
 		this.driver = _driver;
 	}
 	
-	private final String errMsg = "Error Page Not Loaded : ";
 
 	@FindBy(id="username",how=How.ID)
 	private WebElement username;
@@ -31,14 +30,14 @@ public class LoginPage extends PageBase {
 	private WebElement login;
 	
 	public HomePage LoginApplication(String urname,String pass) {
-		Assert.assertTrue(GenericHelper.isElementPresent(By.xpath("//div[@class='loginWrapper']")),errMsg + "Login");
+		Assert.assertTrue(GenericHelper.isElementPresent(By.xpath("//div[@class='loginWrapper']")),ErrorMessage.pageLoadErrMsg + "Login");
 		
 		username.sendKeys(urname);
 		password.sendKeys(pass);
 		login.click();
 		GenericHelper.waitForElement(By.cssSelector(".homeProgramsNav"));
 		
-		Assert.assertTrue(GenericHelper.isElementPresent(By.cssSelector(".homeProgramsNav")), errMsg + "Home Page");
+		Assert.assertTrue(GenericHelper.isElementPresent(By.cssSelector(".homeProgramsNav")), ErrorMessage.pageLoadErrMsg + "Home Page");
 		return new HomePage(driver);
 	}
 	

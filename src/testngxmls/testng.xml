@@ -3,7 +3,8 @@
 <suite name="Webdriver" parallel="false">
 	<test name="Bugzila Suite" preserve-order="true">
 		<classes>
-			<class name="testcases.module.login.LoginTest" />
+			<class name="testcases.module.incentiveprogm.TestIncentiveProgram" />
+			<class name="testcases.module.incentiveprogm.TestActivityIncentiveTemplate" />
 		</classes>
 	</test>
 	</suite> 

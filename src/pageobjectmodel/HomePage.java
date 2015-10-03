@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
+import settings.ErrorMessage;
 import componenthelper.GenericHelper;
 import baseclass.PageBase;
 
@@ -19,7 +20,6 @@ public class HomePage extends PageBase {
 		this._driver = driver;
 	}
 	
-	private final String errMsg = "Error Page Not Loaded : ";
 	
 	@FindBy(xpath="//div[@id='header4']/descendant::a[text()='Programs ']",how=How.XPATH)
 	private WebElement Programs;
@@ -55,7 +55,7 @@ public class HomePage extends PageBase {
 		GenericHelper.waitForElement(ManageIncentivePrograms);
 		ManageIncentivePrograms.click();
 		GenericHelper.waitForElement(By.id("titleDiv"));
-		Assert.assertTrue(GenericHelper.isElementPresent(By.id("titleDiv")), errMsg + "Manage Incentive Programs Page");
+		Assert.assertTrue(GenericHelper.isElementPresent(By.id("titleDiv")), ErrorMessage.pageLoadErrMsg + "Manage Incentive Programs Page");
 		
 		return new ManageIncentivePrograms(_driver);
 	}

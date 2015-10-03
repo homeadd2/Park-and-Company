@@ -19,6 +19,7 @@ public class LoginTest extends BaseClass {
 		mIPage.clickColumnoptions();
 		Thread.sleep(2000);
 		Logout();
+		Thread.sleep(4000);
 	}
 
 }

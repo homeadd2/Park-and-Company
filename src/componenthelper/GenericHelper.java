@@ -7,11 +7,28 @@ import objectrepo.ObjectRepository;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+
 public class GenericHelper {
+	
+	private static final String maskXpath = "//div[@id='loadingIndicatorContainer' and contains(@style,'display: none;')]";
+	
+	private static Predicate<WebDriver> maskPresence = new Predicate<WebDriver>() {
+		@Override
+		public boolean apply(WebDriver arg0) {
+			if(isElementPresent(By.xpath(maskXpath)))
+				return true;
+			else
+				return false;
+		}
+	};
+	
 	
 	public static WebDriverWait getWebDriverWait(int timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(ObjectRepository.driver, timeOutInSeconds);
@@ -20,6 +37,7 @@ public class GenericHelper {
 		return wait;
 		
 	}
+	
 	
 	public static boolean isElementPresent(By locator){
 		try {
@@ -67,6 +85,13 @@ public class GenericHelper {
 	public static WebElement waitForElement(WebElement element) {
 		WebDriverWait wait = getWebDriverWait(60);
 		return wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public static void waitForLoadingMask() {
+		ObjectRepository.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		WebDriverWait wait = getWebDriverWait(60);
+		wait.until(maskPresence);
+		ObjectRepository.driver.manage().timeouts().implicitlyWait(ObjectRepository.config.getElementLoadTimeOut(), TimeUnit.SECONDS);
 	}
 
 }

@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
+import settings.ErrorMessage;
 import componenthelper.ButtonHelper;
 import componenthelper.GenericHelper;
 import baseclass.PageBase;
@@ -22,12 +24,18 @@ public class ManageIncentivePrograms extends PageBase {
 	@FindBy(xpath="//a[contains(text(),'Column options')]",how=How.XPATH)
 	private WebElement Columnoptions;
 	
-	public void clickColumnoptions() throws InterruptedException {
+	@FindBy(xpath="//button[text()='+ New Program']",how=How.XPATH)
+	private WebElement NewProgram;
+	
+	public void clickColumnoptions() {
 		Columnoptions.click();
-		GenericHelper.waitForElement(By.xpath("//button[text()='Cancel']"));
-		Thread.sleep(2000);
-		ButtonHelper.click(By.xpath("//button[text()='Cancel']"));
-		GenericHelper.waitForElement(Columnoptions);
+		GenericHelper.waitForElement(By.name("columnOptionsForm"));	
+	}
+	
+	public NewProgram clickNewProgram(){
+		NewProgram.click();
+		GenericHelper.waitForLoadingMask();
+		return new NewProgram(driver);
 	}
 
 }
