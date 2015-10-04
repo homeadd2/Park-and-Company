@@ -7,6 +7,7 @@ import objectrepo.ObjectRepository;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,13 +22,25 @@ public class GenericHelper {
 	
 	private static Predicate<WebDriver> maskPresence = new Predicate<WebDriver>() {
 		@Override
-		public boolean apply(WebDriver arg0) {
-			if(isElementPresent(By.xpath(maskXpath)))
+		public boolean apply(WebDriver driver) {
+			if(driver.findElements((By.xpath(maskXpath))).size() > 0 )
 				return true;
 			else
 				return false;
 		}
 	};
+	
+	public static Function<WebDriver, Boolean> checkForElement(final By locator) {
+		return new Function<WebDriver, Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				if(ObjectRepository.driver.findElements(locator).size() > 0 )
+					return true;
+				else
+					return false;
+			}
+		};
+	}
 	
 	
 	public static WebDriverWait getWebDriverWait(int timeOutInSeconds) {
@@ -38,8 +51,17 @@ public class GenericHelper {
 		
 	}
 	
+	public static boolean isElementPresent(By locator) {
+		try {
+			WebDriverWait wait = getWebDriverWait(60);
+			return wait.until(checkForElement(locator));
+		} catch (TimeoutException e) {
+			return false;
+		}
+		
+	}
 	
-	public static boolean isElementPresent(By locator){
+	public static boolean isElementPresentQuick(By locator){
 		try {
 			if(ObjectRepository.driver.findElements(locator).size() == 1)
 				return true;

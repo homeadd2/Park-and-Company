@@ -30,6 +30,7 @@ public class LoginPage extends PageBase {
 	private WebElement login;
 	
 	public HomePage LoginApplication(String urname,String pass) {
+		Logout();
 		Assert.assertTrue(GenericHelper.isElementPresent(By.xpath("//div[@class='loginWrapper']")),ErrorMessage.pageLoadErrMsg + "Login");
 		
 		username.sendKeys(urname);

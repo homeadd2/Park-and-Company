@@ -15,7 +15,6 @@ public class TestActivityIncentiveTemplate extends BaseClass {
 	
 	@Test
 	public void TestActivityIncentiveTemp() throws InterruptedException{
-		Logout();
 		LoginPage lpage = new LoginPage(ObjectRepository.driver);
 		HomePage hPage = lpage.LoginApplication(ObjectRepository.config.getUsername(), ObjectRepository.config.getPassword());
 		ManageIncentivePrograms mIPage = hPage.OpenManageIncentivePrograms();

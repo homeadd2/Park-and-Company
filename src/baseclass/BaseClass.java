@@ -8,7 +8,7 @@ import componenthelper.GenericHelper;
 public class BaseClass extends InitializeWebDriver {
 	
 	protected void Logout() {
-		if(GenericHelper.isElementPresent(By.xpath("//span[@class='headerMenuPipe']/preceding-sibling::span[contains(text(),'Welcome')]"))){
+		if(GenericHelper.isElementPresentQuick(By.xpath("//span[@class='headerMenuPipe']/preceding-sibling::span[contains(text(),'Welcome')]"))){
 			WebElement logout = GenericHelper.getElement(By.xpath("//span[@class='headerMenuPipe']/preceding-sibling::span[contains(text(),'Welcome')]"));
 			logout = GenericHelper.waitForElementClickAble(logout);
 			logout.click();
