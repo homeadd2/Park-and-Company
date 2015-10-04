@@ -27,6 +27,7 @@ public class NewProgram extends PageBase {
 	
 	public ActivityIncentiveTemplate CreateActivityIncentiveTemplate() {
 		DropDownHelper.selectByVisibleText(By.name("IncentiveTemplate"), "Activity Incentive Template");
+		GenericHelper.waitForLoadingMask();
 		Build.click();
 		GenericHelper.waitForLoadingMask();
 		return new ActivityIncentiveTemplate(driver);

@@ -10,6 +10,7 @@ import org.testng.Assert;
 import settings.ErrorMessage;
 import componenthelper.ButtonHelper;
 import componenthelper.GenericHelper;
+import componenthelper.JavaScriptExecutorHelper;
 import baseclass.PageBase;
 
 public class ManageIncentivePrograms extends PageBase {
@@ -32,8 +33,8 @@ public class ManageIncentivePrograms extends PageBase {
 		GenericHelper.waitForElement(By.name("columnOptionsForm"));	
 	}
 	
-	public NewProgram clickNewProgram(){
-		NewProgram.click();
+	public NewProgram clickNewProgram() throws InterruptedException{
+		JavaScriptExecutorHelper.scrollElementAndClick(NewProgram);
 		GenericHelper.waitForLoadingMask();
 		return new NewProgram(driver);
 	}

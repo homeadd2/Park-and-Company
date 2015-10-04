@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import componenthelper.ButtonHelper;
 import componenthelper.GenericHelper;
+import componenthelper.JavaScriptExecutorHelper;
 import objectrepo.ObjectRepository;
 import pageobjectmodel.HomePage;
 import pageobjectmodel.LoginPage;

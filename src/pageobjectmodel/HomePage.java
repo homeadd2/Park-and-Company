@@ -56,7 +56,7 @@ public class HomePage extends PageBase {
 		ManageIncentivePrograms.click();
 		GenericHelper.waitForElement(By.id("titleDiv"));
 		Assert.assertTrue(GenericHelper.isElementPresent(By.id("titleDiv")), ErrorMessage.pageLoadErrMsg + "Manage Incentive Programs Page");
-		
+		GenericHelper.waitForLoadingMask();
 		return new ManageIncentivePrograms(_driver);
 	}
 	

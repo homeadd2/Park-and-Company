@@ -20,6 +20,17 @@ public class TestActivityIncentiveTemplate extends BaseClass {
 		ManageIncentivePrograms mIPage = hPage.OpenManageIncentivePrograms();
 		NewProgram npPage = mIPage.clickNewProgram();
 		ActivityIncentiveTemplate aiPage =  npPage.CreateActivityIncentiveTemplate();
+		aiPage.SelectProgramName("Test", "Test");
+		aiPage.SelectProgramVisibilityStartDate("05", "April", "2002");
+		aiPage.SelectProgramVisibilityEndDate("01", "October", "2002");
+		aiPage.SelectProgramStartDate("26", "April", "2002");
+		aiPage.SelectProgramEndDate("30", "November", "2015");
+		aiPage.SelectProgramLastSubmitDate("01", "December", "2015");
+		aiPage.SelectProgramCloseDates("31", "December", "2015");
+		aiPage.AddPoints("1001", "22", "Hello1");
+		aiPage.AddPointType("test", "100");
+		aiPage.AddProgramIncentive("CODE1", "TPE1", "TesTing", "100");
+		aiPage.AddEligibleGroup("test");
 		Thread.sleep(2000);
 		Logout();
 	}
