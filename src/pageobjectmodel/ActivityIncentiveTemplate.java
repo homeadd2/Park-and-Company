@@ -93,6 +93,15 @@ public class ActivityIncentiveTemplate extends PageBase {
 	@FindBy(xpath="//div[@id='accordion']/descendant::div[@id='rendered'][position()=5]/button",how=How.XPATH)
 	private WebElement EligibleGroupNext;
 	
+	@FindBy(xpath="//a[text()='Validation']",how=How.XPATH)
+	private WebElement Validation;
+	
+	@FindBy(xpath="//div[@id='accordion']/descendant::div[@id='rendered'][position()=6]/button",how=How.XPATH)
+	private WebElement ValidationNext;
+	
+	@FindBy(xpath="//a[text()='Finish']",how=How.XPATH)
+	private WebElement Finish;
+	
 	
 	public void SelectProgramName(String pName,String pDesc) throws InterruptedException {
 		SelectProgram.click();
@@ -226,6 +235,22 @@ public class ActivityIncentiveTemplate extends PageBase {
 		EligibleGroup.click();
 		GenericHelper.waitForLoadingMask();
 		
+	}
+	
+	public void checkValidationField(boolean fName,boolean lName,boolean eMail,boolean acCode,boolean date) throws InterruptedException {
+		
+		JavaScriptExecutorHelper.scrollElementAndClick(Validation);
+		GenericHelper.waitForLoadingMask();
+		Validation val = new Validation(driver);
+		val.checkValidationField(fName, lName, eMail, acCode, date);
+		ValidationNext.click();
+		Validation.click();
+		GenericHelper.waitForLoadingMask();
+		
+	}
+	
+	public void clickFinish() {
+		Finish.click();
 	}
 
 }

@@ -26,11 +26,20 @@ public class NewProgram extends PageBase {
 	private WebElement Build;
 	
 	public ActivityIncentiveTemplate CreateActivityIncentiveTemplate() {
+		
 		DropDownHelper.selectByVisibleText(By.name("IncentiveTemplate"), "Activity Incentive Template");
 		GenericHelper.waitForLoadingMask();
 		Build.click();
 		GenericHelper.waitForLoadingMask();
 		return new ActivityIncentiveTemplate(driver);
 		
+	}
+	
+	public SalesIncentiveTemplateBasic CreateSalesIncentiveTemplate() {
+		DropDownHelper.selectByVisibleText(By.name("IncentiveTemplate"), "Sales Incentive Template - Basic");
+		GenericHelper.waitForLoadingMask();
+		Build.click();
+		GenericHelper.waitForLoadingMask();
+		return new SalesIncentiveTemplateBasic(driver);
 	}
 }

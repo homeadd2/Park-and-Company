@@ -31,6 +31,7 @@ public class TestActivityIncentiveTemplate extends BaseClass {
 		aiPage.AddPointType("test", "100");
 		aiPage.AddProgramIncentive("CODE1", "TPE1", "TesTing", "100");
 		aiPage.AddEligibleGroup("test");
+		aiPage.checkValidationField(true, false, true, false, false);
 		Thread.sleep(2000);
 		Logout();
 	}
