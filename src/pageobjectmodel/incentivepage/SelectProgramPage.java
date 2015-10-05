@@ -28,6 +28,7 @@ public class SelectProgramPage extends PageBase {
 	private WebElement SelectProgramNext;
 	
 	public void SelectProgramName(String pName,String pDesc) throws InterruptedException {
+		GenericHelper.waitForLoadingMask();
 		SelectProgram.click();
 		GenericHelper.waitForElement(ProgramName);
 		ProgramName.sendKeys(pName);

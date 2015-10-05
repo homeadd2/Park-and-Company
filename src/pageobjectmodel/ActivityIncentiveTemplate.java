@@ -15,6 +15,12 @@ import baseclass.PageBase;
 import componenthelper.GenericHelper;
 import componenthelper.JavaScriptExecutorHelper;
 
+/**
+ * @author rahul.rathore
+ *	
+ *	05-Oct-2015
+ *
+ */
 public class ActivityIncentiveTemplate extends PageBase {
 
 	private WebDriver driver;
@@ -58,7 +64,7 @@ public class ActivityIncentiveTemplate extends PageBase {
 		GenericHelper.waitForLoadingMask();
 		Validation val = new Validation(driver);
 		val.checkValidationField(fName, lName, eMail, acCode, date);
-		ValidationNext.click();
+		JavaScriptExecutorHelper.scrollElementAndClick(ValidationNext);
 		Validation.click();
 		GenericHelper.waitForLoadingMask();
 		

@@ -18,6 +18,7 @@ public class TestActivityIncentiveTemplate extends BaseClass {
 		LoginPage lpage = new LoginPage(ObjectRepository.driver);
 		HomePage hPage = lpage.LoginApplication(ObjectRepository.config.getUsername(), ObjectRepository.config.getPassword());
 		ManageIncentivePrograms mIPage = hPage.OpenManageIncentivePrograms();
+		mIPage.selectItemPerList("100");
 		NewProgram npPage = mIPage.clickNewProgram();
 		ActivityIncentiveTemplate aiPage =  npPage.CreateActivityIncentiveTemplate();
 		aiPage.SelectProgramName("Test", "Test");
@@ -32,6 +33,7 @@ public class TestActivityIncentiveTemplate extends BaseClass {
 		aiPage.AddProgramIncentive("CODE1", "TPE1", "TesTing", "100");
 		aiPage.AddEligibleGroup("test");
 		aiPage.checkValidationField(true, false, true, false, false);
+		aiPage.clickFinish();
 		Thread.sleep(2000);
 		Logout();
 	}

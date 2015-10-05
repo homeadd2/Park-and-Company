@@ -32,7 +32,7 @@ public class ConfigureProgramPage extends PageBase {
 	@FindBy(xpath="//div[@id='PointTypesSection']/descendant::select[position()=1]",how=How.XPATH)
 	private WebElement PointType;
 	
-	@FindBy(xpath="//div[@id='PointTypesSection']/descendant::input[@name='pointAllocationPrimary' and position()=1]",how=How.XPATH)
+	@FindBy(name="pointAllocationPrimary",how=How.ID_OR_NAME)
 	private WebElement PointAllocation;
 	
 	@FindBy(xpath="//div[@id='accordion']/descendant::div[@id='rendered'][position()=3]/button",how=How.XPATH)
@@ -57,10 +57,10 @@ public class ConfigureProgramPage extends PageBase {
 	
 	public void AddPointType(String type,String poitAlloc) throws InterruptedException{
 		
-		JavaScriptExecutorHelper.scrollElementAndClick(PointType);
-		DropDownHelper.selectByVisibleText(PointType, type);
 		PointAllocation.clear();
 		PointAllocation.sendKeys(poitAlloc);
+		JavaScriptExecutorHelper.scrollElementAndClick(PointType);
+		DropDownHelper.selectByVisibleText(PointType, type);
 		Thread.sleep(1000);
 		ConfigureProgramNext.click();
 		GenericHelper.waitForLoadingMask();

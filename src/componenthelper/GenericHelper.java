@@ -115,5 +115,11 @@ public class GenericHelper {
 		wait.until(maskPresence);
 		ObjectRepository.driver.manage().timeouts().implicitlyWait(ObjectRepository.config.getElementLoadTimeOut(), TimeUnit.SECONDS);
 	}
+	
+	public static String getText(By locator) {
+		if(isElementPresent(locator))
+			return ObjectRepository.driver.findElement(locator).getText();
+		return null;
+	}
 
 }
